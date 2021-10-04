@@ -80,3 +80,16 @@ a:active {
   text-decoration: none;
   color: inherit;
 }
+
+button {
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  padding: 0;
+  cursor: pointer;
+
+  // Windows high contrast mode
+  @media screen and (-ms-high-contrast: active) {
+    border: 2px solid currentColor;
+  }
+}
