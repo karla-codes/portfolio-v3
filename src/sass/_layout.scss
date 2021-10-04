@@ -1,0 +1,152 @@
+:root {
+  --input-border: #8b8a8b;
+  --input-focus-h: 245;
+  --input-focus-s: 100%;
+  --input-focus-l: 42%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Karla', sans-serif;
+  font-size: 1.125rem;
+  width: 100%;
+}
+
+h1,
+h2 {
+  margin-bottom: 1.5rem;
+}
+
+main {
+  width: 90%;
+  margin: 0 auto;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+.intro,
+.projects,
+.contact {
+  margin-bottom: 11.375rem;
+}
+
+.intro {
+  &-header {
+    margin-bottom: 4.5rem;
+  }
+
+  &-header p:not(:last-of-type),
+  &-header h1 {
+    margin-bottom: 1rem;
+  }
+
+  &-skills ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    & li {
+      border: 1px solid black;
+      border-radius: 22px;
+      padding: 5px 15px;
+      margin-right: 12px;
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.projects {
+  &-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    & .card {
+      border-left: 3px solid black;
+      padding-left: 1rem;
+      width: 90%;
+
+      & h2,
+      & p {
+        margin-bottom: 10px;
+      }
+
+      & a {
+        font-size: 1.25rem;
+        padding-bottom: 5px;
+        border-bottom: 2px dashed black;
+      }
+    }
+
+    & .card:not(:last-child) {
+      margin-bottom: 6.125rem;
+    }
+  }
+}
+
+.contact form,
+.contact form > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact form {
+  margin-top: 2rem;
+
+  & label {
+    margin-bottom: 12px;
+  }
+
+  & input,
+  & textarea {
+    font-size: max(16px, 1em);
+    font-family: inherit;
+    padding: 5px;
+    background-color: #fff;
+    border: 2px solid var(--input-border);
+  }
+
+  & input:not(textarea) {
+    line-height: 1;
+    height: 2.25rem;
+  }
+
+  & textarea {
+    resize: vertical;
+  }
+
+  & div:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
+footer {
+  border-top: 1px solid black;
+  text-align: center;
+  padding: 2rem 0;
+  & .footer-links {
+    & ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 0 auto 1rem;
+      width: 90%;
+
+      & li {
+        padding: 5px 10px;
+      }
+    }
+  }
+}

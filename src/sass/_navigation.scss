@@ -1,0 +1,22 @@
+.nav-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 2rem auto;
+}
+
+.nav-wrapper svg {
+  width: 25vw;
+}
+
+nav.nav-links {
+  font-size: 1.125rem;
+  display: flex;
+  // justify-content: space-between;
+  // width: 60%;
+  margin-top: 1rem;
+
+  & a {
+    margin-right: 1rem;
+  }
+}

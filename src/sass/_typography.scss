@@ -1,0 +1,38 @@
+h1 {
+  font-size: 1.5rem;
+}
+
+h1,
+h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
+  line-height: 37px;
+}
+
+a {
+  font-size: 1.25rem;
+}
+
+.intro {
+  &-header h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.1875rem;
+  }
+  & p {
+    font-size: 1.125rem;
+  }
+  &-skills {
+    & h2 {
+      font-size: 1.5rem;
+    }
+    & ul li {
+      font-size: 1rem;
+    }
+  }
+}
+
+.projects .card {
+  & h2 {
+    font-size: 2.1875rem;
+  }
+}
