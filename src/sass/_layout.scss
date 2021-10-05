@@ -12,9 +12,6 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  font-family: 'Karla', sans-serif;
-  font-size: 1.125rem;
-  width: 100%;
 }
 
 h1,
@@ -23,72 +20,111 @@ h2 {
 }
 
 main {
-  width: 90%;
+  display: grid;
+  grid-template-rows: repeat(auto-fit, minmax(15rem, 1fr));
   margin: 0 auto;
 }
 
 header {
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
+
+.main-wrapper {
+  width: 90%;
+  max-width: 945px;
+  margin: 0 auto;
+}
+
+footer {
+  border-top: 1px solid black;
+  text-align: center;
+  padding: 2rem 0;
+  & .footer-links {
+    & ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 0 auto 1rem;
+      width: 90%;
+
+      & li {
+        padding: 5px 10px;
+      }
+    }
+  }
+}
+
+/**************************************************************************
+Home page styles
+***************************************************************************/
+
 .intro,
 .projects,
 .contact {
   margin-bottom: 11.375rem;
 }
 
+.pills {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  & li {
+    border: 1px solid black;
+    border-radius: 22px;
+    padding: 5px 15px;
+    margin-right: 12px;
+    margin-bottom: 8px;
+    line-height: 1;
+  }
+}
+
 .intro {
+  margin: auto;
+  margin-bottom: 11.375rem;
+
   &-header {
     margin-bottom: 4.5rem;
+
+    & details {
+      margin: 1rem auto 4rem;
+
+      & summary {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+      }
+    }
   }
 
   &-header p:not(:last-of-type),
   &-header h1 {
     margin-bottom: 1rem;
   }
-
-  &-skills ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    & li {
-      border: 1px solid black;
-      border-radius: 22px;
-      padding: 5px 15px;
-      margin-right: 12px;
-      margin-bottom: 8px;
-    }
-  }
 }
 
 .projects {
   &-cards {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 4rem;
 
     & .card {
-      border-left: 3px solid black;
-      padding-left: 1rem;
-      width: 90%;
-
       & h2,
       & p {
         margin-bottom: 10px;
       }
 
       & a {
-        font-size: 1.25rem;
         padding-bottom: 5px;
         border-bottom: 2px dashed black;
       }
     }
 
     & .card:not(:last-child) {
-      margin-bottom: 6.125rem;
+      // margin-bottom: 6.125rem;
     }
   }
 }
@@ -100,7 +136,8 @@ header {
 }
 
 .contact form {
-  margin-top: 2rem;
+  margin: 4rem auto 0;
+  max-width: 380px;
 
   & label {
     margin-bottom: 12px;
@@ -108,8 +145,6 @@ header {
 
   & input,
   & textarea {
-    font-size: max(16px, 1em);
-    font-family: inherit;
     padding: 5px;
     background-color: #fff;
     border: 2px solid $input-border;
@@ -164,24 +199,30 @@ header {
   }
 }
 
-footer {
-  border-top: 1px solid black;
-  text-align: center;
-  padding: 2rem 0;
-  & .footer-links {
-    & ul {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      list-style: none;
-      padding: 0;
-      margin: 0 auto 1rem;
-      width: 90%;
+/**************************************************************************
+Project detail styles
+***************************************************************************/
 
-      & li {
-        padding: 5px 10px;
-      }
+.project-intro,
+.project-goal,
+.project-challenges,
+.project-conclusion,
+.projects {
+  margin-bottom: 4.25rem;
+}
+
+.project-intro {
+  & h2 {
+    margin-top: 2.375rem;
+    margin-bottom: 14px;
+  }
+
+  & .project-links {
+    margin-top: 2.375rem;
+
+    & a {
+      padding-bottom: 5px;
+      border-bottom: 2px dashed black;
     }
   }
 }
