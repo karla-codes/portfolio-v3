@@ -3,51 +3,57 @@ title: 'Karla Walker'
 layout: 'base.pug'
 ---
 
-include _includes/nav.pug
 
 
-
-main 
-  article(class="intro" id="intro")
-    header.intro-header  
-      h1 I’m #{title}, a Front-End Focused Full Stack Developer, Design enthusiast, and Occasional doodler.
-      p Although I’ve always loved tech, web development was not a part of my original plan. After putting school and my dream of becoming a video game designer on hold, I was left feeling unfullfilled. But fear not! My curiosity, love for learning, and motivation to enjoy the work that I do soon helped me discover a shiny, new career path that allowed me to use my creativity to build products on the web.
-      p Programming was a new concept to me but I remember the moment I was hooked: my first ‘Hello World’. Refreshing the browser and seeing the code that I wrote come to life felt like magic! I began learning to design and code websites on my own with the help of some great resources like Skillcrush, SuperHi, and Treehouse (and Google, of course!). I quickly fell in love with CSS and JavaScript and learned the importance of building accessible sites. 
-      p In my pursuit to understand JavaScript better, I recently graduated from the Treehouse Full-Stack JS Techdegree, allowing me to expand my skillset and understanding of the web. I’m currently looking for a full-time role where I can help build thoughtful web experiences. 
-    .intro-skills 
-      h2 Skills 
-      ul 
-        li HTML5 
-        li CSS3
-        li Sass
-        li JavaScript ES6 
-        li React 
-        li Node 
-        li Express 
-        li SQL 
-        li Git/GitHub
-        li Responsive/Mobile Design 
-        li Figma 
-  article(class="projects" id="projects")
-    h1 Projects 
-    .projects-cards 
-      each project in collections.projects 
-        .card 
-          h2= project.data.title 
-          p= project.data.shortDescription
-          a(href=`${project.url}`) View Project 
-  section(class="contact" id="contact")
-    h1 Contact 
-    p If you’re interested in working together, please reach out at <a href="mailto:karlaxcodes@gmail.com">karlaxcodes@gmail.com</a> or fill out the form below!
-    form(action="", method="post") 
-      .form-name 
-        label(for="name") Name:
-        input(type="text", name="name")
-      .form-email 
-        label(for="email") Email:
-        input(type="email", name="email")
-      .form-message 
-        label(for="message") Message:
-        textarea(name="message", cols="30", rows="10") 
-      button(type="submit") Submit
+.main-wrapper 
+  include _includes/nav.pug
+  main 
+    article(class="intro" id="intro")
+      header.intro-header  
+        h1 Hello there! I’m #{title}, a Front-End Focused Full Stack Developer, Design enthusiast, and Occasional doodler.
+        //- h1 I’m #{title}, a Front-End Focused Full Stack Developer, Design enthusiast, and Occasional doodler.
+        //- p Although I’ve always loved tech, web development was not a part of my original plan. After putting school and my dream of becoming a video game designer on hold, I was left feeling unfullfilled. But fear not! My curiosity, love for learning, and motivation to enjoy the work that I do soon helped me discover a shiny, new career path that allowed me to use my creativity to build products on the web.
+        //- p Programming was a new concept to me but I remember the moment I was hooked: my first ‘Hello World’. Refreshing the browser and seeing the code that I wrote come to life felt like magic! I began learning to design and code websites on my own with the help of some great resources like Skillcrush, SuperHi, and Treehouse (and Google, of course!). I quickly fell in love with CSS and JavaScript and learned the importance of building accessible sites. 
+        //- p In my pursuit to understand JavaScript better, I recently graduated from the Treehouse Full-Stack JS Techdegree, allowing me to expand my skillset and understanding of the web. I’m currently looking for a full-time role where I can help build thoughtful web experiences. 
+        details 
+          summary More About Me 
+          p Although I’ve always loved tech, web development was not a part of my original plan. After putting school and my dream of becoming a video game designer on hold, I was left feeling unfullfilled. But fear not! My curiosity, love for learning, and motivation to enjoy the work that I do soon helped me discover a shiny, new career path that allowed me to use my creativity to build products on the web.
+          p Programming was a new concept to me but I remember the moment I was hooked: my first ‘Hello World’. Refreshing the browser and seeing the code that I wrote come to life felt like magic! I began learning to design and code websites on my own with the help of some great resources like Skillcrush, SuperHi, and Treehouse (and Google, of course!). I quickly fell in love with CSS and JavaScript and learned the importance of building accessible sites. 
+          p In my pursuit to understand JavaScript better, I recently graduated from the Treehouse Full-Stack JS Techdegree, allowing me to expand my skillset and understanding of the web. I’m currently looking for a full-time role where I can help build thoughtful web experiences. 
+      .intro-skills 
+        h2 Skills 
+        ul.pills 
+          li HTML5 
+          li CSS3
+          li Sass
+          li JavaScript ES6 
+          li React 
+          li Node 
+          li Express 
+          li SQL 
+          li Git/GitHub
+          li Responsive/Mobile Design 
+          li Figma 
+    article(class="projects" id="projects")
+      h1 Projects 
+      ul.projects-cards 
+        each project in collections.projects 
+          li.card 
+            h2 <span></span> #{project.data.title} 
+            p= project.data.shortDescription
+            a(href=`${project.url}`) View Project 
+    section(class="contact" id="contact")
+      h1 Contact 
+      p If you’re interested in working together, please reach out at <a href="mailto:karlaxcodes@gmail.com">karlaxcodes@gmail.com</a> or fill out the form below!
+      form(action="", method="post") 
+        .form-name 
+          label(for="name") Name:
+          input(type="text", name="name")
+        .form-email 
+          label(for="email") Email:
+          input(type="email", name="email")
+        .form-message 
+          label(for="message") Message:
+          textarea(name="message", cols="30", rows="5") 
+        button(type="submit") Submit
 
