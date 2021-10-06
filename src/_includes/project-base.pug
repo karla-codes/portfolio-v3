@@ -1,35 +1,37 @@
-main 
-  .project-intro 
-    h1= title
-    p= longDescription
-    h2 Tech Stack
-    ul 
-      each tech in techStack 
-        li= tech
-    .project-links 
-      a(href="http://") Live Site 
-      a(href="http://") Source Code
-    img(src="", alt="", srcset="")  
-  .project-goal 
-    h2 Inspiration and Goal
-    each text in goalText 
-      p= text
-    img(src="", alt="", srcset="")
-  .project-challenges 
-    h2 Challenges
-    each text in challengesText 
-      p= text
-    img(src="", alt="", srcset="")
-  .project-conclusion 
-    h2 What I Learned 
-    each text in conclusionText 
-      p= text
-  article 
-    h1 More Projects
-    .projects-cards
-      each project in collections.projects 
-        if project.data.title !== title 
-          .card 
-            h2= project.data.title 
-            p= project.data.shortDescription
-            a(href=`${project.url}`) View Project
+.main-wrapper 
+  include ./nav.pug
+  main 
+    .project-intro 
+      h1= title
+      p= longDescription
+      h2 Tech Stack
+      ul.pills 
+        each tech in techStack 
+          li= tech
+      .project-links 
+        a(href="http://") Live Site 
+        a(href="http://") Source Code
+      img(src="", alt="", srcset="")  
+    .project-goal 
+      h2 Inspiration and Goal
+      each text in goalText 
+        p= text
+      img(src="", alt="", srcset="")
+    .project-challenges 
+      h2 Challenges
+      each text in challengesText 
+        p= text
+      img(src="", alt="", srcset="")
+    .project-conclusion 
+      h2 What I Learned 
+      each text in conclusionText 
+        p= text
+    article(class="projects" id="projects")
+      h1 More Projects
+      ul.projects-cards
+        each project in collections.projects 
+          if project.data.title !== title 
+            li.card 
+              h2= project.data.title 
+              p= project.data.shortDescription
+              a(href=`${project.url}`) View Project
