@@ -95,6 +95,7 @@ Home page styles
       & summary {
         font-size: 1.25rem;
         margin-bottom: 1rem;
+        cursor: pointer;
       }
     }
   }
@@ -205,9 +206,7 @@ Project detail styles
 
 .project-intro,
 .project-goal,
-.project-challenges,
-.project-conclusion,
-.projects {
+.project-challenges {
   margin-bottom: 4.25rem;
 }
 
@@ -221,8 +220,16 @@ Project detail styles
     margin-top: 2.375rem;
 
     & a {
-      padding-bottom: 5px;
       border-bottom: 2px dashed black;
+      padding-bottom: 5px;
+
+      &:not(:last-of-type) {
+        margin-right: 1.5rem;
+      }
     }
   }
+}
+
+.project-conclusion {
+  margin-bottom: 11.375rem;
 }
