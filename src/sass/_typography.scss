@@ -1,57 +1,45 @@
 body {
   font-family: 'Karla', sans-serif;
-  font-size: 1.125rem;
+  font-size: 1rem;
 }
 
 h1 {
   font-size: 1.5rem;
 }
 
-h1,
-h2 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 500;
-  line-height: 37px;
-}
-
 a {
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 .intro {
   &-header h1 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 2.1875rem;
+    font-size: clamp(1.74rem, 4vw + 1rem, 3.5rem);
+    font-weight: 700;
+    line-height: 1.1;
   }
-  & p {
-    font-size: 1.125rem;
-  }
-  &-skills {
-    & h2 {
-      font-size: 1.5rem;
+}
+
+.projects h2,
+.skills h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  // text-transform: uppercase;
+}
+
+.projects-cards {
+  & .card {
+    & a {
+      font-size: 1.125rem;
+      font-weight: 400;
     }
-    & ul li {
+    & p {
       font-size: 1rem;
     }
   }
 }
 
-.projects .card {
-  & h2 {
-    font-size: 2.1875rem;
-  }
-
-  & a {
-    font-size: 1.25rem;
-  }
-}
-
-.contact form {
-  & input,
-  & textarea {
-    font-size: max(16px, 1em);
-    font-family: inherit;
-  }
+.pills {
+  font-size: 1rem;
 }
 
 .project-intro {
